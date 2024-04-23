@@ -20,19 +20,39 @@ const conversions =
     ['I', 1],
 ];
 
+
+//Numbers to test:
+// -1 0
+// 4000 0
+// 4001 0
+// 9 0
+// 16 0
+// 649 0
+// 1023 X should be MXXIII
+// 3999 X should be MMMCMXCIX
+
 const convertToRoman = () => {
     let romanString = '';
     let runningVal = numInput.value;
-    while(runningVal > 0) {
-        conversions.forEach((conversion) => {
-            if(runningVal >= conversion[1]) {
-                console.log(`${runningVal} is greater or equal to ${conversion[1]}`);
-                runningVal -= conversion[1];
-                romanString += conversion[0];
+    if(runningVal < 1) {
+        console.log("Please enter a number greater than or equal to 1");
+        return;
+    } else if(runningVal >= 4000) {
+        console.log("Please enter a number less than or equal to 3999");
+        return;
+    } else {
+        while(runningVal > 0) {
+            for(const conversion of conversions) {
+                if(runningVal >= conversion[1]) {
+                    console.log(`${runningVal} is greater or equal to ${conversion[1]}`);
+                    runningVal -= conversion[1];
+                    romanString += conversion[0];
+                    break;
+                };
             };
-        });
+        }
+        console.log(`The Roman numeral for ${numInput.value} is ${romanString}`);
     }
-    console.log(`The Roman numeral for ${numInput.value} is ${romanString}`);
     return romanString;
 };
 
