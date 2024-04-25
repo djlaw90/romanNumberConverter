@@ -1,7 +1,11 @@
-body {
+html,body {
   font-family: "MedievalSharp", cursive;
+  color: brown;
   font-weight: 400;
   font-style: normal;
+  
+  display: flex;
+  flex-direction: column;
 }
 
 h1 {
@@ -13,10 +17,11 @@ h1 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border: 3px solid black;
+    border: 3px solid brown;
 }
 
 #container {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,4 +36,89 @@ h1 {
 #convert-btn {
     margin-top: 1vh;
     height: 50px;
+}
+
+#result {
+    color: black;
+    font-size: 3em;
+}
+
+
+  
+.bg {
+    /* The image used */
+    background-image: url("./img/9215097.jpg");
+
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+  footer, footer p {
+    padding: 1vh;
+    text-align: center;
+    color: black;
+    margin-top: auto;
+  }
+
+  .text-box {
+    margin-left: 44vw;
+   margin-top: 42vh;
+}
+
+/* button styles */
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+    position: absolute;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
 }

@@ -2,6 +2,8 @@
 
 const numInput = document.getElementById('number');
 const convertButton = document.getElementById('convert-btn');
+const output = document.getElementById('result');
+const convertForm = document.getElementById('convert-form');
 
 const conversions =
 [
@@ -20,25 +22,16 @@ const conversions =
     ['I', 1],
 ];
 
-
-//Numbers to test:
-// -1 0
-// 4000 0
-// 4001 0
-// 9 0
-// 16 0
-// 649 0
-// 1023 X should be MXXIII
-// 3999 X should be MMMCMXCIX
-
-const convertToRoman = () => {
+const convertToRoman = (e) => {
+    e.preventDefault();
     let romanString = '';
     let runningVal = numInput.value;
-    if(runningVal < 1) {
-        console.log("Please enter a number greater than or equal to 1");
+    if(runningVal < 1 || isNaN(runningVal)) {
+        output.innerText = "Please enter a number greater than or equal to 1";
+        
         return;
     } else if(runningVal >= 4000) {
-        console.log("Please enter a number less than or equal to 3999");
+        output.innerText = "Please enter a number less than or equal to 3999";
         return;
     } else {
         while(runningVal > 0) {
@@ -51,8 +44,9 @@ const convertToRoman = () => {
                 };
             };
         }
-        console.log(`The Roman numeral for ${numInput.value} is ${romanString}`);
+        output.innerText = `The Roman numeral for ${numInput.value} is ${romanString}`;
     }
+    numInput.value = '';
     return romanString;
 };
 
