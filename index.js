@@ -44,7 +44,7 @@ const convertToRoman = (e) => {
                 };
             };
         }
-        output.innerText = `The Roman numeral for ${numInput.value} is ${romanString}`;
+        output.innerHTML = `<p>The Roman numeral for ${numInput.value} is <br><div id="roman-string">${romanString}</div></p>`;
     }
     numInput.value = '';
     return romanString;

@@ -40,7 +40,7 @@ h1 {
 
 #result {
     color: black;
-    font-size: 3em;
+    font-size: 2em;
 }
 
 
@@ -94,8 +94,12 @@ h1 {
 }
 
 .btn-white {
-    background-color: #fff;
-    color: #777;
+    font-size: 1.5em;
+    font-family: "MedievalSharp", cursive;
+    background-color: tan;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 10px;
 }
 
 .btn::after {
@@ -121,4 +125,9 @@ h1 {
 .btn-animated {
     animation: moveInBottom 5s ease-out;
     animation-fill-mode: backwards;
+}
+
+#roman-string {
+    text-align: center;
+    font-size: 3em;
 }
